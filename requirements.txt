@@ -1,0 +1,29 @@
+# Core Dependencies
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.10.0
+scikit-learn==1.6.1
+tensorflow-macos==2.16.2
+tensorflow-metal==1.2.0
+streamlit~=1.41.1
+keras~=3.8.0
+
+# Optional (If Used)
+tensorflow-io-gcs-filesystem==0.37.1  # Required for TensorFlow GCS support
+tensorboard==2.16.2  # Required for TensorFlow visualization
+protobuf==4.25.6  # TensorFlow dependency
+h5py==3.12.1  # For saving Keras models
+requests==2.32.3  # If making API calls for price data
+
+# Dependencies Required by TensorFlow
+absl-py==2.1.0
+astunparse==1.6.3
+flatbuffers==25.1.24
+google-pasta==0.2.0
+grpcio==1.70.0
+opt-einsum==3.4.0
+typing_extensions==4.12.2
+wrapt==1.17.2
+tensorflow~=2.16.2
+keras~=3.8.0
+celery~=5.4.0
