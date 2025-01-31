@@ -48,11 +48,37 @@ with col1:
     st.metric(label="📊 **Last Known Price**", value=f"${last_known_price:.2f}", delta_color="normal")
 
 with col2:
-    st.metric(label="🔮 **Predicted Next Price**", value=f"${predicted_price:.2f}", delta=predicted_price - df['close'].iloc[-1])
+    st.metric(label="🔮 **Predicted Next Price**", value=f"${predicted_price:.2f}", delta=predicted_price - last_known_price)
+
+# 📉 24h Price Change
+df['price_change_24h'] = df['close'].diff()
+last_change = scaler.inverse_transform([[df['price_change_24h'].iloc[-1]]])[0][0]
+st.metric(label="📉 **24h Price Change**", value=f"${last_change:.2f}", delta=last_change)
+
+# ✅ Fix 7-Day High & Low
+last_7_days_scaled = df['close'].tail(7).values.reshape(-1, 1)
+last_7_days_actual = scaler.inverse_transform(last_7_days_scaled)
+
+high_7d = last_7_days_actual.max()
+low_7d = last_7_days_actual.min()
+
+col3, col4 = st.columns(2)
+with col3:
+    st.metric(label="📈 **7-Day High**", value=f"${high_7d:.2f}")
+with col4:
+    st.metric(label="📉 **7-Day Low**", value=f"${low_7d:.2f}")
 
 # 📊 Historical Solana Prices Chart
 st.subheader("📊 Solana Price Trends")
 st.line_chart(df.set_index("timestamp")["close"])
+
+# 📅 Last Update Timestamp
+last_update = df['timestamp'].iloc[-1]
+st.text(f"📅 Data last updated on: {last_update}")
+
+# 📡 Data Source Information
+st.markdown("### 📡 Data Source")
+st.write("🔗 Live Solana price data fetched from [CoinGecko API](https://www.coingecko.com/) and [Binance API](https://www.binance.com/).")
 
 # 📌 Add a Footer
 st.markdown(
