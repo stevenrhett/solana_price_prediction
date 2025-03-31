@@ -5,10 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 ![Status](https://img.shields.io/badge/status-active-success)
 
-
 > Predict future prices of **Solana (SOL)** using an LSTM neural network trained on historical data.
-
----
 
 ## 🚀 Features
 
@@ -19,8 +16,6 @@
 - 🧪 Clean UI powered by **Streamlit**
 - 📡 Pulls live data from [CoinGecko](https://www.coingecko.com/) & [Binance](https://www.binance.com/)
 
----
-
 ## 🧠 Model Overview
 
 - Deep learning model: **LSTM (Long Short-Term Memory)**
@@ -28,29 +23,29 @@
 - Preprocessed and scaled using `MinMaxScaler`
 - Model saved as `models/solana_lstm_model.keras`
 
----
-
 ### 🛠️ Local Setup
 
 #### 1. **Clone the repository**
-```bash
+```sh
    git clone https://github.com/yourusername/solana_price_prediction.git
    cd solana_price_prediction
  ```
+
 #### 2.	Install dependencies
-```bash
+```sh
   pip install -r requirements.txt
 ```
+
 #### 3.	Run the app
-```bash
+```sh
     streamlit run app.py
 ```
+
 #### 4.	Open in browser
-```html
+```
     http://localhost:8501
 ```
 
-⸻
 
 ### ☁️ Deploy to Streamlit Cloud
 1.	Push your code to a public GitHub repository. 
@@ -58,20 +53,17 @@
 3. Set your app’s entry point to app.py. 
 4. Add environment variables or secrets as needed in Settings → Secrets.
 
-⸻
+## 🐳 Optional: Docker Support
 
-### 🐳 Optional: Docker Support
-
-## Build Docker image
-```bash
+### Build Docker image
+```sh
   docker build -t solana-price-predictor .
 ```
 
 ## Run Docker container
-```bash
+```sh
   docker run -p 8501:8501 solana-price-predictor
 ````
-⸻
 
 ### 📁 Project Structure
 
@@ -84,14 +76,11 @@
 ├── requirements.txt
 └── README.md
 ```
-⸻
+
 
 ## ⚠️ Disclaimer
-
 This app is for educational and informational purposes only.
 The price predictions are based on statistical modeling and do not constitute financial advice. Always do your own research before making investment decisions.
-
-⸻
 
 ## 🙌 Credits & Tech Stack
 
@@ -103,15 +92,9 @@ Built with:
 - 🌐 CoinGecko API
 - 💹 Binance API
 
-⸻
 ## 📝 License
-
 This project is licensed under the [MIT License](LICENSE).
 
----
 
 ## 📬 Contact
-
 Feel free to open an issue, fork this repo, or drop me a message!
-
----
